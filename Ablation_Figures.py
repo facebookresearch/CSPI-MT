@@ -38,7 +38,7 @@ Normalized by sample size of test_data.
 * values: estimated policy difference values from PDE function
 * cov_matrix: estimated covariance matrix from PDE function
 * gamma: confidence parameter (error tolerance)
-* lb (depreciated): Default is False. If true, we do inference on the value of the 
+* lb (deprecated): Default is False. If true, we do inference on the value of the 
 lower confidence bound  via asymptotic approximation 
 with the corrected variance of the analogous population quantity, 
 instead of plug-in estimation.
@@ -55,8 +55,8 @@ based on plug-in gaussian approximation
 * n_samples: number of simulated multivariate gaussian vectors 
 
 #### Outputs
-* np.array of simulated multivaraite gaussian vectors, 
-used for computing critival value
+* np.array of simulated multivariate gaussian vectors, 
+used for computing critical value
 
 ### get_crit_val:
 
@@ -411,7 +411,7 @@ def cutoff_selection(alphas, alpha_0, data, gamma=0.1, n_sim=10000, test_ratio=4
     single_cutoff_dr = np.zeros(2)
 
     # Single cutoff selection
-    # 1. Single cutoff selection (pick largest estimated passing probabillity, pick largest estimated expected improvement)
+    # 1. Single cutoff selection (pick largest estimated passing probability, pick largest estimated expected improvement)
 
     values, cov_matrix = PDE(
         alphas, alpha_0, test_data=data, by_quantile=False, dr=False
